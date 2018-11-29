@@ -52,3 +52,24 @@ class Multilinguist
     json_response['translationText']
   end
 end
+
+class MathGenius < Multilinguist
+
+  def initialize
+    super
+  end
+
+  def report_total(array)
+    return("The total is #{array.reduce(:+)}")
+  end
+
+  def get_odds(array)
+    output = []
+    array.each do |item|
+      if item % 2 != 0
+        output << item
+      end
+    end
+    return output
+  end
+end
